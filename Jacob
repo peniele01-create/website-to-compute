@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Message du jour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+        }
+        #message {
+            font-size: 22px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message">Chargement...</div>
+
+<script>
+    const messages = [
+        "Jour 1 : Coucou toi, j’espère que ta journée commence bien.",
+        "Jour 2 : Tu me fais sourire à chaque fois.",
+        "Jour 3 : Merci d’être là, même de loin.",
+        "Jour 4 : J’aime  nos discussions, elles me rendent vraiment heureuse.",
+        "Jour 5 : Aujourd’hui tu me manques un peu.",
+        "Jour 6 : Je t'aime.",
+        "Jour 7 : Franchement, je suis contente que ce soit toi.",
+        "Jour 8 : Tu restes quelqu’un de simple et vrai, j’aime ça.",
+        "Jour 9 : Même quand on se voit pas, je pense à toi.",
+        "Jour 10 : Continue comme tu es, tu gères.",
+        "Jour 11 : Merci de me respecter comme tu le fais.",
+        "Jour 12 : Je suis toujours contente de recevoir ton message.",
+        "Jour 13 : T’es quelqu’un de bien, c’est rare.",
+        "Jour 14 : J’ai hâte qu’on se revoie.",
+        "Jour 15 :Je t'aimeeee",
+        "Jour 16 : Je suis contente de t’avoir rencontré.",
+        "Jour 17 : Passe une bonne journée 🫶",
+        "Jour 18 : Ça me fait plaisir de te connaître.",
+        "Jour 19 : J’ai pensé à toi aujourd’hui.",
+        "Jour 20 : Tu es le meilleur.",
+        "Jour 21 : Même de loin, je suis là pour toi.",
+        "Jour 22 : Merci de me donner ma place dans ta vie.",
+        "Jour 23 : Malgré tout c’est toi que je veux.",
+        "Jour 24 : J’aime notre petit truc à nous.",
+        "Jour 25 : J’espère que tu souris en lisant ça, tu me manques.",
+        "Jour 26 : Tu comptes pour moi, vraiment.",
+        "Jour 27 : J’aime trop la façon dont on est ensemble.",
+        "Jour 28 : Si tu savais comme je tiens à toi.",
+        "Jour 29 : Merci d'être toi .",
+        "Jour 30 : Je te le dis pas souvent mais… je t’aime 🫶"
+    ];
+
+    // date de début 
+    const startDate = new Date("2025-11-22");
+
+    const today = new Date();
+    const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    const index = diffDays % messages.length;
+
+    document.getElementById("message").textContent = 
+        messages[index >= 0 ? index : 0];
+</script>
+
+</body>
+</html>
